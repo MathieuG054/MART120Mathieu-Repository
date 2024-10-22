@@ -14,10 +14,40 @@
 <style> input[type=text]:invalid {
        border:1px solid red;
 }	</style>
-<script> function showPopup(event) {
-event.preventDefault();
-alert(Thank you for submitting!);
-}	</script>
+<script>
+        function showPopup(event) {
+
+            event.preventDefault();
+
+
+            var firstName = document.getElementById("fName");
+            var lastName = document.getElementById("lName");
+            var termsNo = document.querySelector('input[name="no"][value="No"]');
+
+
+            if (firstName.value.trim() === "") {
+                alert("Please enter your first name.");
+                firstName.focus();
+                return;
+            }
+
+
+            if (lastName.value.trim() === "") {
+                alert("Please enter your last name.");
+                lastName.focus();
+                return; 
+            }
+
+
+            if (termsNo.checked) {
+                alert("Please accept the terms to continue submitting.");
+                return; 
+            }
+
+
+            alert("Thank you for submitting the form!");
+        }
+    </script
     <body>
         <h1>Contact Us</h1>
 
